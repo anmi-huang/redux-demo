@@ -20,7 +20,7 @@ const Air= ({ data }) => {
                         <div>{data.County}</div>
                     </div>
                     <div className="d-flex mr-1">
-                        <div>AQI：</div>
+                        <div> AQI：</div>
                         <div>{data.Status}</div>
                     </div>
                     <div className="d-flex mr-1">
@@ -30,8 +30,6 @@ const Air= ({ data }) => {
                 </div>
             </div>
         )}
-
-    
     </div>
     )
 }

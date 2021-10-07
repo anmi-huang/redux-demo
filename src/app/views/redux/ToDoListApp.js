@@ -12,8 +12,6 @@ const ToDoListApp = (props) => {
     //useSelector選到reducers中的todo
     const todo = useSelector((state) => state.todo)
     const weatherData = useSelector((state) => state.weatherData)
-  
-    console.log("weatherData",weatherData)
     const dispatch = useDispatch()
 
 

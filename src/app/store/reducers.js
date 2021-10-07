@@ -24,15 +24,17 @@ export const toggleTodoCompleted = (idx) => {
 		idx
 	}
 }
-// fetchWeatherData 
+// fetchWeatherData 多包一層dispatch
 export const fetchWeatherData = () => (dispatch) => {
 	fetch("/static-api/aqi.json")
 		.then((resp) => resp.json())
 		.then(({ data }) => 
+
 			dispatch({
 				type: WEATHER_DATA_CHANGE,
 				data: data[20]
 			})
+
 		)
 }
 
@@ -46,7 +48,6 @@ const todo = (
 	switch (type) {
 		case ADD_TODO:
 			resultState = [...state, todo]
-			// console.log("todo",todo)
 			break
 		case DELETE_TODO:
 			resultState = [...state.slice(0, idx), ...state.slice(idx + 1)]
@@ -63,6 +64,7 @@ const todo = (
 			break
 		default:
 			resultState = state
+
 	}
 
 	localStorage.setItem("listData", JSON.stringify(resultState))
@@ -71,9 +73,10 @@ const todo = (
 }
 // weatherData
 const weatherData = (state = null, action) => {
-	switch (action.type) {
+	const { type, data } = action
+	switch (type) {
 		case WEATHER_DATA_CHANGE:
-			return action.data
+			return data
 		default:
 			return state
 	}
