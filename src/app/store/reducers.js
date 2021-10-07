@@ -24,14 +24,14 @@ export const toggleTodoCompleted = (idx) => {
 		idx
 	}
 }
-
+// fetchWeatherData 
 export const fetchWeatherData = () => (dispatch) => {
 	fetch("/static-api/aqi.json")
 		.then((resp) => resp.json())
 		.then(({ data }) => 
 			dispatch({
 				type: WEATHER_DATA_CHANGE,
-				data: data[11]
+				data: data[20]
 			})
 		)
 }
@@ -69,7 +69,7 @@ const todo = (
 
 	return resultState
 }
-
+// weatherData
 const weatherData = (state = null, action) => {
 	switch (action.type) {
 		case WEATHER_DATA_CHANGE:

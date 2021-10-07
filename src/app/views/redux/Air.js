@@ -1,9 +1,14 @@
-import React, { useState } from "react"
-// import { useDispatch } from "react-redux"
+import React, { useEffect, useState } from "react"
+import { useDispatch } from "react-redux"
 import Spinner from 'components/Spinner'
+import { fetchWeatherData } from "store/reducers"
 
 const Air= ({ data }) => {
 
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(fetchWeatherData())
+    }, [])
     console.log("data",data)
     return (
      <div className="position-absolute air-position"> 

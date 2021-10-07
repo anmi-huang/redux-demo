@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react"
 import { useSelector, useDispatch } from "react-redux"
 //帶入要使用的action
-import { addTodo,fetchWeatherData } from "store/reducers"
+import { addTodo } from "store/reducers"
 import ToDoInputBlk from "./ToDoInputBlk"
 import ToDoItemList from "./ToDoItemList"
 import Air from "./Air"
@@ -19,10 +19,7 @@ const ToDoListApp = (props) => {
 
     return (
         <div className="p-4">
-            {/* <button onClick={()=>{dispatch(fetchWeatherData()); }}>抓取</button> */}
-            <Air data={weatherData} className="position-relative" 
-            onLoad={dispatch(fetchWeatherData())}
-            /> 
+            <Air data={weatherData} className="position-relative"/> 
             <ToDoInputBlk/>
             <button
                 className="btn rounded my-1"
