@@ -18,11 +18,11 @@ const ToDoListApp = (props) => {
 
     return (
         <div className="p-4">
-            <Air data={weatherData} className="position-relative" />
+            <Air data={weatherData} />
             <ToDoInputBlk />
             <TodoListBlk />
             <Count />
-            <div className="d-flex my-1 pb-2 border-bottom">待辦事項</div>
+            <div className="d-flex my-1 pb-2 border-bottom ">待辦事項</div>
             <ToDoItemList data={todo} />
         </div>
     )
