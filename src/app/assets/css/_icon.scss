@@ -10,7 +10,7 @@ i.icon {
     }
 }
 
-$list: ('upload','share','calendar','duplicate','more','list','location-add','location-remove','day-add','day-remove','delete','save','quest','add','heart-fill','heart-stroke','lock','password','facebook','bus','bus-stop','info','locate','adv','taxi','rent','store','bike','toilet','parking','doc','drop','info-center','airplane','stopwatch','between','link-out','take-off','landing','reload', 'download', 'photo', 'video', 'audio', 'map', 'thumb', 'umbrella', 'mail', 'clock', 'checked', 'pause', 'speaker', 'tel', 'navigate', 'view', 'location', 'check', 'close', 'warn', 'link', 'global', 'dialog', 'arrow-left', 'arrow-right', 'arrow-down', 'logout', 'avatar', 'pencil', 'heart', 'earth', 'bell', 'hamburger', 'star', 'home', 'magnifier', 'dm', 'car', 'service'
+$list: ('minus','add1','upload','share','calendar','duplicate','more','list','location-add','location-remove','day-add','day-remove','delete','save','quest','add','heart-fill','heart-stroke','lock','password','facebook','bus','bus-stop','info','locate','adv','taxi','rent','store','bike','toilet','parking','doc','drop','info-center','airplane','stopwatch','between','link-out','take-off','landing','reload', 'download', 'photo', 'video', 'audio', 'map', 'thumb', 'umbrella', 'mail', 'clock', 'checked', 'pause', 'speaker', 'tel', 'navigate', 'view', 'location', 'check', 'close', 'warn', 'link', 'global', 'dialog', 'arrow-left', 'arrow-right', 'arrow-down', 'logout', 'avatar', 'pencil', 'heart', 'earth', 'bell', 'hamburger', 'star', 'home', 'magnifier', 'dm', 'car', 'service'
 );
 
 @each $var in $list {
