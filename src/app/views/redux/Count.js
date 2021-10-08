@@ -11,7 +11,7 @@ const Count = () => {
             <button
                 className="btn rounded mr-1 text-secondary w-4 h-4"
                 onClick={() => {
-                    counter > '0' ? dispatch(subCount(counter)) : 0
+                    dispatch(subCount())
                 }}
             >
                 <i className="icon icon-minus w-4 h-4"></i>
@@ -20,7 +20,7 @@ const Count = () => {
             <button
                 className="btn rounded text-secondary w-4 h-4"
                 onClick={() => {
-                    counter >= '0' ? dispatch(addCount(counter)) : 0
+                    dispatch(addCount())
                 }}
             >
                 <i className="icon icon-add1"></i>

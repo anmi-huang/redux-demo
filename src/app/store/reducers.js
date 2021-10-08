@@ -93,9 +93,9 @@ const weatherData = (state = null, action) => {
 const counter = (state = 0, action) => {
     switch (action.type) {
         case 'INCREMENT':
-            return state + 1
+            return state >= 0 ? state + 1 : 0
         case 'DECREMENT':
-            return state - 1
+            return state > 0 ? state - 1 : 0
         default:
             return state
     }
