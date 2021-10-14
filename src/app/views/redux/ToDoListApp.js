@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 //帶入要使用的action
-// import { addTodo } from 'store/reducers'
 import ToDoInputBlk from './ToDoInputBlk'
 import ToDoItemList from './ToDoItemList'
 import Air from './Air'
@@ -13,11 +12,8 @@ const ToDoListApp = (props) => {
     /*redux hook*/
     const todo = useSelector((state) => state.todo)
     const weatherData = useSelector((state) => state.weatherData)
-    //useSelector選到reducers中的todo
-    // const dispatch = useDispatch()
-
     return (
-        <div className="p-4">
+        <div className="p-4 position-relative">
             <Air data={weatherData} />
             <ToDoInputBlk />
             <TodoListBlk />

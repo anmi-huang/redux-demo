@@ -1,5 +1,5 @@
 import React from 'react'
-import ToDoListApp from 'views/redux/ToDoListApp'
-const App = (props) => <ToDoListApp />
+import Main from '../views/router/Main'
+const App = (props) => <Main />
 
 export default React.memo(App)

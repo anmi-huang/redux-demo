@@ -6,7 +6,7 @@ const TodoListBlk = () => {
     return (
         <div className=" d-flex my-1">
             <button
-                className="btn rounded bg-primary"
+                className="btn rounded bg-primary "
                 onClick={() => {
                     dispatch(addTodo('喝水', 'https://unsplash.it/480/360?random=1'))
                     dispatch(addTodo('洗澡', 'https://unsplash.it/480/360?random=2'))
@@ -16,7 +16,7 @@ const TodoListBlk = () => {
                 每日
             </button>
             <button
-                className="btn rounded bg-danger"
+                className="btn rounded bg-danger "
                 onClick={() => {
                     dispatch(addTodo('運動', 'https://unsplash.it/480/360?random=4'))
                 }}

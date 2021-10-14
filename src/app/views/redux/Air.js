@@ -10,10 +10,10 @@ const Air = ({ data }) => {
     }, [])
     console.log('data', data)
     return (
-        <div className="position-absolute air-position">
+        <div className="position-absolute absolute-top-right">
             {!data && <Spinner />}
             {data && (
-                <div className="  p-2 d-flex ">
+                <div className=" p-2 d-flex">
                     <div className="mr-1">{data.County}</div>
                     <div className="mr-1">AQI：{data.Status}</div>
                     <div className="mr-1">

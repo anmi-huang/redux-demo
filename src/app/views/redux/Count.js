@@ -24,6 +24,7 @@ const Count = () => {
                 }}
             >
                 <i className="icon icon-add1"></i>
+                
             </button>
         </div>
     )

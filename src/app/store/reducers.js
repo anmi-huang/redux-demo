@@ -4,7 +4,6 @@ const ADD_TODO = 'ADD_TODO'
 const DELETE_TODO = 'DELETE_TODO'
 const TOGGLE_TODO_COMPLETED = 'TOGGLE_TODO_COMPLETED'
 const WEATHER_DATA_CHANGE = 'WEATHER_DATA_CHANGE'
-
 const INCREMENT = 'INCREMENT'
 const DECREMENT = 'DECREMENT'
 
@@ -27,6 +26,7 @@ export const toggleTodoCompleted = (idx) => {
         idx,
     }
 }
+
 // fetchWeatherData 多包一層dispatch
 export const fetchWeatherData = () => (dispatch) => {
     fetch('/static-api/aqi.json')
