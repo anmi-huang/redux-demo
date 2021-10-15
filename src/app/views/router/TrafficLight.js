@@ -1,7 +1,7 @@
 import React from 'react'
 // import { BrowserRouter as Switch, Route, Link, useHistory, useLocation, useParams } from 'react-router-dom'
 import { HashRouter, Route, Link, Switch, useParams, useHistory, useLocation } from 'react-router-dom'
-export default function Example() {
+export default function TrafficLight() {
     return (
         <HashRouter>
             <SwitchImage />
@@ -17,21 +17,22 @@ const imageData = [
 
 function SwitchImage() {
     let location = useLocation()
-    let background = location.state && location.state.background
-    console.log('location', location)
-    console.log('location.state', location.state)
     return (
         <div>
             <Switch>
                 <Route exact path="/" children={<Home />} />
             </Switch>
-            {background && <Route path="/img/:id" children={<Modal />} />}
+            {location.pathname && <Route path="/img/:id" children={<Modal />} />}
         </div>
     )
 }
 
 function MinImage({ color }) {
     return <div className="rounded" style={{ width: 50, height: 50, background: color }} />
+}
+
+function Image({ color }) {
+    return <div style={{ width: '100%', height: 300, background: color }} />
 }
 
 function Home() {
@@ -43,7 +44,6 @@ function Home() {
                     key={i.id}
                     to={{
                         pathname: `/img/${i.id}`,
-                        state: { background: location },
                     }}
                 >
                     <MinImage color={i.color} />
@@ -51,9 +51,6 @@ function Home() {
             ))}
         </div>
     )
-}
-function Image({ color }) {
-    return <div style={{ width: '100%', height: 300, background: color }} />
 }
 
 function Modal() {
