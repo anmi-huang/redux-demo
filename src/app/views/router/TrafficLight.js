@@ -22,7 +22,7 @@ function SwitchImage() {
             <Switch>
                 <Route exact path="/" children={<Home />} />
             </Switch>
-            {location.pathname && <Route path="/img/:id" children={<Modal />} />}
+            <Route path="/img/:id" children={<Modal />} />
         </div>
     )
 }
