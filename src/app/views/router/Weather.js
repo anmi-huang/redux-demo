@@ -5,6 +5,8 @@ const HomePage = (props) => {
     const [data, setData] = useState([])
     const [city, setCity] = useState({})
     const [isActive, setActive] = useState(false)
+    console.log('city', city)
+    console.log('cityId', city.cityId)
 
     useEffect(() => {
         fetch('static-api/forecast.json')
@@ -24,6 +26,7 @@ const HomePage = (props) => {
                             onClick={() => {
                                 const countData = data[i]
                                 setCity({
+                                    cityId: i,
                                     location: countData.location,
                                     avgT: countData.T.elementValue.value,
                                     minT: countData.MinT.elementValue.value,

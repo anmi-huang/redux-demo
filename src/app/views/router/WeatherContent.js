@@ -1,7 +1,7 @@
 import React from 'react'
 function WeatherContent({ value, isActive, onClose }) {
     const { location, avgT, minT, maxT, description } = value
-    console.log(value.location)
+    // console.log(value.location)
     return (
         <div
             className={`${
