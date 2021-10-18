@@ -1,12 +1,12 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Link, useParams, useRouteMatch } from 'react-router-dom'
+import { HashRouter, Route, Link, Switch, useParams, useHistory, useRouteMatch } from 'react-router-dom'
 import AboutTodo from './AboutTodo'
 import Home from '../../components/Home'
 import Weather from './Weather'
 
 export default function Main() {
     return (
-        <Router>
+        <HashRouter>
             <div>
                 <ul className="px-5 py-2 d-flex bg-light">
                     <li className="mr-1 flex-grow-1">
@@ -24,21 +24,22 @@ export default function Main() {
                 </ul>
 
                 <Switch>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
                     <Route path="/topics">
                         <Topics />
                     </Route>
-                    <Route path="/weather">
+                    {/* ?不管也沒有值都要顯示 */}
+                    <Route path="/weather/:locationId?">
                         <Weather />
                     </Route>
                     <Route path="/AboutTodo">
                         <AboutTodo />
                     </Route>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
                 </Switch>
             </div>
-        </Router>
+        </HashRouter>
     )
 }
 
@@ -75,7 +76,7 @@ function Topics() {
 
 function Topic() {
     let { topicId } = useParams()
-
+    console.log('topicId', topicId)
     return (
         <div>
             <h5>{topicId}</h5>

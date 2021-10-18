@@ -1,6 +1,6 @@
 import React from 'react'
 // import { BrowserRouter as Switch, Route, Link, useHistory, useLocation, useParams } from 'react-router-dom'
-import { HashRouter, Route, Link, Switch, useParams, useHistory, useLocation } from 'react-router-dom'
+import { HashRouter, Route, Link, Switch, useParams, useHistory } from 'react-router-dom'
 export default function TrafficLight() {
     return (
         <HashRouter>
@@ -16,13 +16,13 @@ const imageData = [
 ]
 
 function SwitchImage() {
-    let location = useLocation()
     return (
         <div>
             <Switch>
-                <Route exact path="/" children={<Home />} />
+                {/* 可以用render or component */}
+                <Route exact path="/" render={() => <Home />} />
             </Switch>
-            <Route path="/img/:id" children={<Modal />} />
+            <Route path="/img/:id" render={() => <Modal />} />
         </div>
     )
 }
@@ -36,7 +36,6 @@ function Image({ color }) {
 }
 
 function Home() {
-    let location = useLocation()
     return (
         <div className=" mt-5 d-flex align-content-center justify-content-center">
             {imageData.map((i) => (

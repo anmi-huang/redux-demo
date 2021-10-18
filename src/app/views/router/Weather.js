@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import WeatherContent from './WeatherContent'
-
-const HomePage = (props) => {
+import { HashRouter, Route, Link, Switch, useParams, useHistory } from 'react-router-dom'
+const HomePage = () => {
     const [data, setData] = useState([])
-    const [city, setCity] = useState({})
     const [isActive, setActive] = useState(false)
-    console.log('city', city)
-    console.log('cityId', city.cityId)
+    const [locationData, setLocation] = useState(null)
+    let history = useHistory()
+    let { locationId } = useParams()
 
     useEffect(() => {
         fetch('static-api/forecast.json')
@@ -16,40 +16,54 @@ const HomePage = (props) => {
             })
             .catch(console.error)
     }, [])
+    useEffect(() => {
+        if (data.length === 0 || !locationId) return
+        console.log(data)
+        setLocation(data.find((item) => item.location == locationId))
+        console.log(
+            'locationData',
+            data.find((item) => item.location == locationId)
+        )
+    }, [locationId, data])
     return (
         <div>
             <ul className="p-4">
                 {data.map((item, i) => (
                     <li className="mb-2" key={i}>
-                        <button
-                            className="btn justify-content-between w-100 h-6 px-2 rounded "
-                            onClick={() => {
-                                const countData = data[i]
-                                setCity({
-                                    cityId: i,
-                                    location: countData.location,
-                                    avgT: countData.T.elementValue.value,
-                                    minT: countData.MinT.elementValue.value,
-                                    maxT: countData.MaxT.elementValue.value,
-                                    svg: countData.Wx.elementValue[1].value,
-                                    description: countData.WeatherDescription.elementValue.value,
-                                })
-                                setActive(true)
+                        <Link
+                            key={data[i].location}
+                            to={{
+                                pathname: `/weather/${data[i].location}`,
                             }}
+                            className="btn justify-content-between w-100 h-6 px-2 rounded"
                         >
                             {item.location}
                             <i className="icon icon-arrow-right fz-13px" aria-hidden="true"></i>
-                        </button>
+                        </Link>
                     </li>
                 ))}
             </ul>
-            <WeatherContent
-                value={city}
-                isActive={isActive}
-                onClose={() => {
-                    setActive(false)
-                }}
-            ></WeatherContent>
+            {/* <Switch>
+                <Route exact path={`/weather/:${locationId}`}> */}
+
+            <div
+                className={`${
+                    locationId ? '' : 'trs-x-100'
+                } scroll-blk fixed-top w-100 h-100 bg-secondary py-2 text-center trs-all`}
+            >
+                {locationData && (
+                    <WeatherContent
+                        locationData={locationData}
+                        // isActive={isActive}
+                        onClose={() => {
+                            setActive(false)
+                            history.goBack()
+                        }}
+                    ></WeatherContent>
+                )}
+            </div>
+            {/* </Route>
+            </Switch> */}
         </div>
     )
 }

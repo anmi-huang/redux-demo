@@ -1,5 +1,5 @@
 import React from 'react'
-import TrafficLight from '../views/router/TrafficLight'
-const App = (props) => <TrafficLight />
+import Main from '../views/router/Main'
+const App = (props) => <Main />
 
 export default React.memo(App)
