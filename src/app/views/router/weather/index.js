@@ -31,6 +31,7 @@ const HomePage = () => {
                     <h1 className="text-dark">天氣資訊</h1>
                     <i className="icon icon-home mr-1 fz-20px" aria-hidden="true"></i>
                 </Link>
+
                 {data.map((item, i) => (
                     <li className="mb-2" key={i}>
                         <Link

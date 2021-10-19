@@ -5,6 +5,7 @@ function Content({ locationData, Back }) {
         minT = locationData?.MinT.elementValue.value,
         maxT = locationData?.MaxT.elementValue.value,
         description = locationData?.WeatherDescription.elementValue.value
+
     return (
         <div>
             <i className="justify-content-start p-4 icon icon-arrow-left" onClick={Back}></i>
