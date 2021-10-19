@@ -13,11 +13,11 @@ const Air = ({ data }) => {
     return (
         <div>
             <div className="position-absolute absolute-top-left">
-                <Link className="d-inline-flex align-items-center h-6 text-secondary p-4 " to="/">
+                <Link className="d-inline-flex align-items-center h-6 text-secondary p-4 mt-4" to="/">
                     <i className="icon icon-home mr-1 fz-20px" aria-hidden="true"></i>
                 </Link>
             </div>
-            <div className="position-absolute absolute-top-right">
+            <div className="position-absolute absolute-top-right mt-4">
                 {!data && <Spinner />}
                 {data && (
                     <div className=" p-2 d-flex">

@@ -9,7 +9,7 @@ const ToDoInputBlk = () => {
     const dispatch = useDispatch()
     return (
         <div>
-            <div className="d-flex mt-5">
+            <div className="d-flex mt-10 ">
                 <input
                     value={title}
                     type="text "
@@ -18,14 +18,13 @@ const ToDoInputBlk = () => {
                     onChange={(e) => setTitle(e.target.value)}
                 />
                 <input
-
                     value={titleImg}
                     type="text "
                     className="border rounded pl-2 h-4 "
                     placeholder="輸入照片網址"
                     onChange={(e) => setImg(e.target.value)}
                 />
-            
+
                 <button
                     className="btn rounded ml-1 "
                     onClick={() => {
@@ -38,8 +37,6 @@ const ToDoInputBlk = () => {
                     新增
                 </button>
                 <div className=""></div>
-                
-                
             </div>
         </div>
     )

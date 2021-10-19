@@ -49,15 +49,19 @@ const HomePage = () => {
                     </li>
                 ))}
             </ul>
-            <SlideView isShow={locationId} className="bg-secondary">
-                {locationData && (
-                    <Content
-                        locationData={locationData}
-                        Back={() => {
-                            history.goBack()
-                        }}
-                    ></Content>
-                )}
+            <SlideView isShow={locationId} className="bg-light">
+                <div className="d-flex flex-shrink-0 bg-light position-relative shadow">
+                    <Link className="btn w-6 h-6 border-0 position-relative z-100" to="/weather">
+                        <i className="icon icon-arrow-left" aria-hidden="true"></i>
+                        <span className="sr-only">返回</span>
+                    </Link>
+                    <div className="d-flex justify-content-center align-items-center fill-parent font-weight-bolder fz-20px">
+                        {locationData?.location}
+                    </div>
+                </div>
+                <div className="flex-fill scroll-blk">
+                    <Content locationData={locationData} />
+                </div>
             </SlideView>
         </div>
     )
