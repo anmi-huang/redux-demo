@@ -1,5 +1,5 @@
 import React from 'react'
-import Main from '../views/router/Main'
-const App = (props) => <Main />
+import Routes from 'Routes'
+const App = (props) => <Routes />
 
 export default React.memo(App)
