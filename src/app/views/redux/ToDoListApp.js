@@ -9,7 +9,6 @@ import TodoListBlk from './TodoListBlk'
 
 const ToDoListApp = (props) => {
     console.log('ToDoListApp')
-    /*redux hook*/
     const todo = useSelector((state) => state.todo)
     const weatherData = useSelector((state) => state.weatherData)
     return (

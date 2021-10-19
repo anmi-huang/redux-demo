@@ -19,19 +19,24 @@ const HomePage = () => {
     }, [])
 
     useEffect(() => {
-        if (data.length === 0 || !locationId) return
-        setLocation(data.find((item) => item.location == locationId))
+        if (!data || !locationId) return
+        //如果是一樣的locationId，就不要render
+        if (locationId !== locationData?.location) {
+            setLocation(data.find((item) => item.location == locationId))
+            console.log('city change')
+        }
     }, [locationId, data])
 
     return (
         <div>
             <ul className="p-4">
-                <Link className="d-flex align-items-center h-6 mb-1 text-secondary justify-content-between" to="/">
+                <div className="d-flex align-items-center h-6 mb-1  justify-content-between">
                     <p></p>
-                    <h1 className="text-dark">天氣資訊</h1>
-                    <i className="icon icon-home mr-1 fz-20px" aria-hidden="true"></i>
-                </Link>
-
+                    <h1 className="fz-18px">天氣資訊</h1>
+                    <Link to="/">
+                        <i className="icon icon-home mr-1 fz-20px text-secondary" aria-hidden="true"></i>
+                    </Link>
+                </div>
                 {data.map((item, i) => (
                     <li className="mb-2" key={i}>
                         <Link
@@ -44,7 +49,7 @@ const HomePage = () => {
                     </li>
                 ))}
             </ul>
-            <SlideView isShow={locationId}>
+            <SlideView isShow={locationId} className="bg-secondary">
                 {locationData && (
                     <Content
                         locationData={locationData}
