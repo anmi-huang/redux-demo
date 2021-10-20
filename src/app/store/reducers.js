@@ -61,7 +61,7 @@ const todo = (state = JSON.parse(localStorage.getItem('listData')) || [], action
 export const fetchWeatherData = () => (dispatch) => {
     // console.log(123)
 
-    setTimeout(() => {}, timeout)
+    // setTimeout(() => {}, timeout)
     fetch('/static-api/aqi.json')
         .then((resp) => resp.json())
         .then(({ data }) =>
