@@ -61,7 +61,17 @@ const todo = (state = JSON.parse(localStorage.getItem('listData')) || [], action
 export const fetchWeatherData = () => (dispatch) => {
     // console.log(123)
 
-    // setTimeout(() => {}, timeout)
+    // setTimeout(() => {
+    //     fetch('/static-api/aqi.json')
+    //         .then((resp) => resp.json())
+    //         .then(({ data }) =>
+    //             dispatch({
+    //                 type: WEATHER_DATA_CHANGE,
+    //                 data: data[20],
+    //             })
+    //         )
+    // }, 2000)
+
     fetch('/static-api/aqi.json')
         .then((resp) => resp.json())
         .then(({ data }) =>
