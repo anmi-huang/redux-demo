@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import Content from './Content'
-import { Link, useParams, useHistory } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import SlideView from '../../../components/SlideView'
 const HomePage = () => {
     const [data, setData] = useState([])
     const [locationData, setLocation] = useState(null)
-
-    let history = useHistory()
     let { locationId } = useParams()
 
     useEffect(() => {
@@ -20,7 +18,7 @@ const HomePage = () => {
 
     useEffect(() => {
         if (!data || !locationId) return
-        //如果是一樣的locationId，就不要render
+        //現在的locationId跟locationData?.location一樣，就不要render
         if (locationId !== locationData?.location) {
             setLocation(data.find((item) => item.location == locationId))
             console.log('city change')

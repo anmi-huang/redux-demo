@@ -2,10 +2,8 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteTodo, toggleTodoCompleted } from 'store/reducers'
 
-//<ToDoItem data={item} idx={i} />
 const ToDoItem = ({ data, idx }) => {
     const dispatch = useDispatch()
-    //title=item.content,isCompleted=item.isCompleted
     const { title, isCompleted, titleImg } = data
 
     return (
@@ -35,6 +33,7 @@ const ToDoItem = ({ data, idx }) => {
                 }}
             >
                 <i className="icon icon-delete text-secondary" aria-hidden="true"></i>
+                <span className="sr-only">刪除</span>
             </button>
         </div>
     )

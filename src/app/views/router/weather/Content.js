@@ -1,7 +1,7 @@
 import React from 'react'
-function Content({ locationData, Back }) {
-    const location = locationData?.location,
-        avgT = locationData?.T.elementValue.value,
+function Content({ locationData }) {
+    console.log('locationData', locationData)
+    const avgT = locationData?.T.elementValue.value,
         minT = locationData?.MinT.elementValue.value,
         maxT = locationData?.MaxT.elementValue.value,
         description = locationData?.WeatherDescription.elementValue.value

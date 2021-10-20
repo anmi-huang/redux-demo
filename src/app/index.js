@@ -1,17 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './assets/css/app.global.scss'
+
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import reducers from 'store/reducers'
 
 const MOUNT_NODE = document.getElementById('root')
 const __DEV__ = process.env.NODE_ENV === 'development'
+//createStore（reducer,preloadedState,enhancer）
 const store = createStore(reducers, applyMiddleware(thunk))
 
 let render = () => {
     const Root = require('./containers/Root').default
-
+    //Root：傳入store={store}
     ReactDOM.render(<Root store={store} />, MOUNT_NODE)
 }
 

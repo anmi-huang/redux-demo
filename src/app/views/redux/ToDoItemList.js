@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import ToDoItem from './ToDoItem'
-//data=傳進來的todo
-//  <ToDoItemList data={todo} />
+
 const ToDoItemList = ({ data }) => {
     return (
         <ul>
             {data.map((item, i) => (
-                <li key={i} className="mb-2">
+                <li key={i} className="mb-2 mb-0-last ">
                     <ToDoItem data={item} idx={i} />
                 </li>
             ))}
