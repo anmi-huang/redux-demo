@@ -29,7 +29,6 @@ const HomePage = () => {
         <div>
             <ul className="p-4">
                 <div className="d-flex align-items-center h-6 mb-1  justify-content-between">
-                    <p></p>
                     <h1 className="fz-18px">天氣資訊</h1>
                     <Link to="/">
                         <i className="icon icon-home mr-1 fz-20px text-secondary" aria-hidden="true"></i>

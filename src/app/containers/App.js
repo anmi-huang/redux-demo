@@ -1,5 +1,5 @@
 import React from 'react'
-import Routes from 'Routes'
-const App = (props) => <Routes />
+import LoginRoutes from 'LoginRoutes'
+const App = (props) => <LoginRoutes />
 
 export default React.memo(App)
