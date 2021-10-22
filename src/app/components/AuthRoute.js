@@ -8,7 +8,6 @@ function AuthRoute(props) {
         backUrl,
     } = props
     console.log('userRole', userRole)
-    console.log('backUrl', backUrl)
 
     // 如果使用者有權限，就render對應的路由
     if (userRole && userRole.indexOf(routeRole) > -1) {

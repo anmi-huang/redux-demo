@@ -1,4 +1,4 @@
-import Weather from '../../router/weather'
+import Weather from '../../views/router/weather'
 const privateRoutes = [
     {
         path: '/weather/:locationId?',

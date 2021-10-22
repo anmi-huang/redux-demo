@@ -7,6 +7,42 @@ const TOGGLE_TODO_COMPLETED = 'TOGGLE_TODO_COMPLETED'
 const WEATHER_DATA_CHANGE = 'WEATHER_DATA_CHANGE'
 const INCREMENT = 'INCREMENT'
 const DECREMENT = 'DECREMENT'
+const ADD_USER = 'ADD_USER'
+const ADD_ADMIN = 'ADD_ADMIN'
+const ADD_OUT = 'ADD_OUT'
+
+export const loginUserT = () => {
+    return {
+        type: ADD_USER,
+        user: { role: ['user'] },
+    }
+}
+export const loginAdminT = () => {
+    return {
+        type: ADD_ADMIN,
+        user: { role: ['user', 'admin'] },
+    }
+}
+export const loginOutT = () => {
+    return {
+        type: ADD_OUT,
+        user: { role: [] },
+    }
+}
+
+const user = (state = {}, action) => {
+    const { type, user } = action
+    switch (type) {
+        case ADD_USER:
+            return state
+        case ADD_ADMIN:
+            return state
+        case ADD_OUT:
+            return state
+        default:
+            return state
+    }
+}
 
 //action
 export const addTodo = (title, titleImg) => {
@@ -119,6 +155,7 @@ const reducers = combineReducers({
     todo,
     weatherData,
     counter,
+    user,
 })
 
 export default reducers

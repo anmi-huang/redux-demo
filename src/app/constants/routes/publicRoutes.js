@@ -1,5 +1,5 @@
-import Login from '../login'
-import Home from '../home'
+import Login from '../../views/login/Login'
+import Home from '../../views/login/Home'
 
 const publicRoutes = [
     {

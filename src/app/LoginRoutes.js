@@ -41,14 +41,11 @@ export default function Routes() {
                         }}
                     />
                 ))}
-                {/* {privateRoutes.map((route) => (
-                    <AuthRoute key={route.path} user={user} {...route} />
-                ))} */}
-                {adminRoutes.map((route) => (
-                    <AuthRoute key={route.path} user={user} {...route} />
-                ))}
                 {privateRoutes.map((route) => (
                     <AuthRoute key={route.path} user={user1} {...route} />
+                ))}
+                {adminRoutes.map((route) => (
+                    <AuthRoute key={route.path} user={user} {...route} />
                 ))}
             </Switch>
         </HashRouter>

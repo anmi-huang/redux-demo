@@ -1,20 +1,22 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
-// import { useSelector, useDispatch } from 'react-redux'
+// import { useDispatch } from 'react-redux'
+// import { loginOutT } from '../../store/reducers'
 const Home = ({ loginOut }) => {
+    // const dispatch = useDispatch()
     let history = useHistory()
-
-    const outLoginHandler = () => {
-        loginOut()
-        history.replace('/login')
-        console.log('登出')
-    }
-
     return (
         <div className="p-4">
             <div className=" m-2 d-flex align-items-center justify-content-between">
                 <h1 className="fz-18px">首頁</h1>
-                <button onClick={outLoginHandler}>
+                <button
+                    onClick={() => {
+                        // dispatch(loginOutT())
+                        loginOut()
+                        history.replace('/login')
+                        console.log('登出')
+                    }}
+                >
                     <i className="icon icon-logout fz-22px" aria-hidden="true"></i>
                 </button>
             </div>
