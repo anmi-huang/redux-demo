@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
+// import { useSelector, useDispatch } from 'react-redux'
 const Home = ({ loginOut }) => {
     let history = useHistory()
 
@@ -25,7 +26,7 @@ const Home = ({ loginOut }) => {
                 </li>
                 <li>
                     <Link className="btn m-2" to="/weather">
-                        會員天氣資訊
+                        天氣資訊
                     </Link>
                 </li>
                 <li>

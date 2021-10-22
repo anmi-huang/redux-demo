@@ -1,19 +1,16 @@
 import React, { useState } from 'react'
 import { HashRouter, Route, Link, Switch, useParams } from 'react-router-dom'
-import publicRoutes from './views/login/routes/publicRoutes'
-import privateRoutes from './views/login/routes/privateRoutes'
-import adminRoutes from './views/login/routes/adminRoutes'
+import publicRoutes from './constants/routes/publicRoutes'
+import privateRoutes from './constants/routes/privateRoutes'
+import adminRoutes from './constants/routes/adminRoutes'
 import AuthRoute from './components/AuthRoute'
+import { useSelector, useDispatch } from 'react-redux'
+import { loginUserT, loginAdminT } from './store/reducers'
 
 export default function Routes() {
-    //user 存取 role
     const [user, setUser] = useState({})
-    // console.log('user', user)
-
     const loginUser = () => {
-        setUser({
-            role: ['user'],
-        })
+        setUser({ role: ['user'] })
     }
 
     const loginAdmin = () => {
@@ -27,6 +24,8 @@ export default function Routes() {
             role: [],
         })
     }
+    const dispatch = useDispatch()
+    const user1 = dispatch(loginUserT()).user
 
     return (
         <HashRouter>
@@ -42,11 +41,14 @@ export default function Routes() {
                         }}
                     />
                 ))}
-                {privateRoutes.map((route) => (
+                {/* {privateRoutes.map((route) => (
                     <AuthRoute key={route.path} user={user} {...route} />
-                ))}
+                ))} */}
                 {adminRoutes.map((route) => (
                     <AuthRoute key={route.path} user={user} {...route} />
+                ))}
+                {privateRoutes.map((route) => (
+                    <AuthRoute key={route.path} user={user1} {...route} />
                 ))}
             </Switch>
         </HashRouter>
