@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { loginUserT, loginAdminT } from '../../store/reducers'
 
-const Login = ({ loginUser, loginAdmin }) => {
+const Login = ({}) => {
     const dispatch = useDispatch()
     let history = useHistory()
 
@@ -19,17 +19,19 @@ const Login = ({ loginUser, loginAdmin }) => {
                 className="btn m-1"
                 onClick={() => {
                     dispatch(loginUserT())
-                    // loginUser() // 設定使用者權限
-                    history.replace('/weather') // 登入後跳轉後台畫面
+                    console.log('loginAddUser', loginUserT())
+                    history.replace('/weather')
                 }}
             >
                 使用者登入
             </button>
+
             <button
                 className="btn m-1"
                 onClick={() => {
-                    loginAdmin() //設定管理員權限
-                    history.replace('/admin') // 登入跳到管理畫面
+                    dispatch(loginAdminT())
+
+                    history.replace('/admin')
                 }}
             >
                 管理員登入

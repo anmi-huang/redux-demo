@@ -26,19 +26,19 @@ export const loginAdminT = () => {
 export const loginOutT = () => {
     return {
         type: ADD_OUT,
-        user: { role: [] },
+        user: { role: null },
     }
 }
 
-const user = (state = {}, action) => {
+const userState = (state = {}, action) => {
     const { type, user } = action
     switch (type) {
         case ADD_USER:
-            return state
+            return { ...state, user }
         case ADD_ADMIN:
-            return state
+            return { ...state, user }
         case ADD_OUT:
-            return state
+            return { ...state, user }
         default:
             return state
     }
@@ -155,7 +155,7 @@ const reducers = combineReducers({
     todo,
     weatherData,
     counter,
-    user,
+    userState,
 })
 
 export default reducers
