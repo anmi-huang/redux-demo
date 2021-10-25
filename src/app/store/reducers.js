@@ -7,8 +7,9 @@ const TOGGLE_TODO_COMPLETED = 'TOGGLE_TODO_COMPLETED'
 const WEATHER_DATA_CHANGE = 'WEATHER_DATA_CHANGE'
 const INCREMENT = 'INCREMENT'
 const DECREMENT = 'DECREMENT'
-const USER_STATE = 'USER_STATE'
+
 //*** Login ***
+const USER_STATE = 'USER_STATE'
 export const loginState = (role) => {
     return {
         type: USER_STATE,

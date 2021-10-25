@@ -7,8 +7,8 @@ const Home = ({}) => {
     const dispatch = useDispatch()
     let history = useHistory()
     return (
-        <div className="p-4">
-            <div className=" m-2 d-flex align-items-center justify-content-between">
+        <div className="p-4 d-flex flex-column justify-content-center  align-content-center">
+            <div className="my-2 d-flex align-items-center justify-content-between">
                 <h1 className="fz-18px">首頁</h1>
                 {userState?.user?.role && (
                     <button
@@ -25,21 +25,21 @@ const Home = ({}) => {
             <ul>
                 {!userState?.user?.role && (
                     <li>
-                        <Link className="btn m-2" to="/login">
+                        <Link className="btn mb-2  " to="/login">
                             登入
                         </Link>
                     </li>
                 )}
                 {userState?.user?.role && (
                     <li>
-                        <Link className="btn m-2" to="/weather">
+                        <Link className="btn mb-2" to="/weather">
                             天氣資訊
                         </Link>
                     </li>
                 )}
                 {userState?.user?.role?.length == 2 && (
                     <li>
-                        <Link className="btn m-2" to="/admin">
+                        <Link className="btn mb-2" to="/admin">
                             管理員資訊
                         </Link>
                     </li>

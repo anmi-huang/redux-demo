@@ -3,7 +3,7 @@ import { Route, Redirect } from 'react-router-dom'
 
 function AuthRoute(props) {
     const {
-        user: { role: userRole }, //現在可以使用權限的資格[]
+        user: { role: userRole } = {}, //現在可以使用權限的資格[]
         role: routeRole, //當前的登入使用者
         backUrl,
     } = props

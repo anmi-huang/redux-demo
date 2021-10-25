@@ -4,6 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import SlideView from '../../../components/SlideView'
 const HomePage = () => {
     const [data, setData] = useState([])
+
     const [locationData, setLocation] = useState(null)
     let { locationId } = useParams()
 
@@ -28,11 +29,13 @@ const HomePage = () => {
     return (
         <div>
             <ul className="p-4">
-                <div className="d-flex align-items-center h-6 mb-1  justify-content-between">
-                    <h1 className="fz-18px">天氣資訊</h1>
-                    <Link to="/">
+                <div className="d-flex flex-shrink-0 position-relative mb-1 ">
+                    <Link className="btn w-6 h-6 border-0 position-relative z-100" to="/">
                         <i className="icon icon-home mr-1 fz-20px text-secondary" aria-hidden="true"></i>
                     </Link>
+                    <h1 className="fz-18px d-flex justify-content-center align-items-center fill-parent font-weight-bolder">
+                        天氣資訊
+                    </h1>
                 </div>
                 {data.map((item, i) => (
                     <li className="mb-2" key={i}>
@@ -56,6 +59,7 @@ const HomePage = () => {
                         {locationData?.location}
                     </div>
                 </div>
+
                 <div className="flex-fill scroll-blk">
                     <Content locationData={locationData} />
                 </div>
