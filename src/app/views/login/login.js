@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { loginUserT, loginAdminT } from '../../store/reducers'
-
+import { loginState } from '../../store/reducers'
 const Login = ({}) => {
     const dispatch = useDispatch()
     let history = useHistory()
@@ -18,8 +17,7 @@ const Login = ({}) => {
             <button
                 className="btn m-1"
                 onClick={() => {
-                    dispatch(loginUserT())
-                    console.log('loginAddUser', loginUserT())
+                    dispatch(loginState(['user']))
                     history.replace('/weather')
                 }}
             >
@@ -29,8 +27,7 @@ const Login = ({}) => {
             <button
                 className="btn m-1"
                 onClick={() => {
-                    dispatch(loginAdminT())
-
+                    dispatch(loginState(['user', 'admin']))
                     history.replace('/admin')
                 }}
             >

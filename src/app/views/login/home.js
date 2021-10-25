@@ -1,8 +1,7 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { loginOutT } from '../../store/reducers'
-
+import { loginState } from '../../store/reducers'
 const Home = ({}) => {
     const userState = useSelector((state) => state.userState)
     const dispatch = useDispatch()
@@ -14,7 +13,7 @@ const Home = ({}) => {
                 {userState?.user?.role && (
                     <button
                         onClick={() => {
-                            dispatch(loginOutT())
+                            dispatch(loginState(null))
                             history.replace('/login')
                             console.log('登出')
                         }}

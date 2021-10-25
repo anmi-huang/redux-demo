@@ -5,6 +5,7 @@ import privateRoutes from './constants/routes/privateRoutes'
 import adminRoutes from './constants/routes/adminRoutes'
 import AuthRoute from './components/AuthRoute'
 import { useDispatch, useSelector } from 'react-redux'
+
 export default function Routes() {
     const userState = useSelector((state) => state.userState)
 

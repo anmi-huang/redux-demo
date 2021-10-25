@@ -7,44 +7,26 @@ const TOGGLE_TODO_COMPLETED = 'TOGGLE_TODO_COMPLETED'
 const WEATHER_DATA_CHANGE = 'WEATHER_DATA_CHANGE'
 const INCREMENT = 'INCREMENT'
 const DECREMENT = 'DECREMENT'
-const ADD_USER = 'ADD_USER'
-const ADD_ADMIN = 'ADD_ADMIN'
-const ADD_OUT = 'ADD_OUT'
-
-export const loginUserT = () => {
+const USER_STATE = 'USER_STATE'
+//*** Login ***
+export const loginState = (role) => {
     return {
-        type: ADD_USER,
-        user: { role: ['user'] },
-    }
-}
-export const loginAdminT = () => {
-    return {
-        type: ADD_ADMIN,
-        user: { role: ['user', 'admin'] },
-    }
-}
-export const loginOutT = () => {
-    return {
-        type: ADD_OUT,
-        user: { role: null },
+        type: USER_STATE,
+        user: { role },
     }
 }
 
 const userState = (state = {}, action) => {
     const { type, user } = action
     switch (type) {
-        case ADD_USER:
-            return { ...state, user }
-        case ADD_ADMIN:
-            return { ...state, user }
-        case ADD_OUT:
+        case USER_STATE:
             return { ...state, user }
         default:
             return state
     }
 }
 
-//action
+//*** Todolist***
 export const addTodo = (title, titleImg) => {
     return {
         type: ADD_TODO,
@@ -139,7 +121,7 @@ export const subCount = () => {
     }
 }
 
-//state 初始值
+//***counter***
 const counter = (state = 0, action) => {
     switch (action.type) {
         case 'INCREMENT':
